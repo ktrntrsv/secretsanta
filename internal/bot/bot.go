@@ -89,8 +89,9 @@ func (b *Bot) handleHelp(msg *tgbotapi.Message) {
 		"/mywishlist — показываю твой список\n" +
 		"/mygiftee — расскажу, кому даришь (после старта)\n" +
 		"/thankyou текст — отправлю спасибо твоему Санте\n" +
+		fmt.Sprintf("/startgame — запускает только @%s\n", b.adminUsername) +
 		"Ждём тебя в нашей синэпсовой новогодней игре! 🎄"
-	b.reply(msg.Chat.ID, msg.MessageID, fmt.Sprintf(text, b.adminUsername))
+	b.reply(msg.Chat.ID, msg.MessageID, text)
 }
 
 func (b *Bot) handleJoin(msg *tgbotapi.Message) {
